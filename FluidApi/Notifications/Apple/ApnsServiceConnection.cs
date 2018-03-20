@@ -1,0 +1,51 @@
+﻿namespace PushSharp.Apple
+{
+    using Core;
+    using System.Threading.Tasks;
+
+    public class ApnsServiceConnectionFactory : IServiceConnectionFactory<ApnsNotification>
+    {
+        public ApnsServiceConnectionFactory(ApnsConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public ApnsConfiguration Configuration { get; private set; }
+
+        public IServiceConnection<ApnsNotification> Create()
+        {
+            return new ApnsServiceConnection(Configuration);
+        }
+    }
+
+    public class ApnsServiceBroker : ServiceBroker<ApnsNotification>
+    {
+        public ApnsServiceBroker(ApnsConfiguration configuration) : base(new ApnsServiceConnectionFactory(configuration))
+        {
+        }
+    }
+
+    public class ApnsServiceConnection : IServiceConnection<ApnsNotification>
+    {
+        private readonly ApnsConnection connection;
+
+        public ApnsServiceConnection(ApnsConfiguration configuration)
+        {
+            connection = new ApnsConnection(configuration);
+        }
+
+        public async Task Send(ApnsNotification notification)
+        {
+            var completableNotification = new ApnsConnection.CompletableApnsNotification(notification);
+
+            connection.Send(completableNotification);
+
+            var ex = await completableNotification.WaitForComplete().ConfigureAwait(false);
+
+            if (ex != null)
+            {
+                throw ex;
+            }
+        }
+    }
+}

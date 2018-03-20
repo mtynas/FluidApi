@@ -1,0 +1,11 @@
+﻿CREATE TABLE Account
+(
+  accountno integer PRIMARY KEY NOT NULL,
+  email text NOT NULL,
+  password text NOT NULL,
+  accountstatus text NOT NULL,
+  verifytimeout text,
+  accounttype text NOT NULL DEFAULT('fl'),
+  creationdate integer
+);
+

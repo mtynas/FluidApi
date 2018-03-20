@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{FA9727F4-EDD7-4C8E-A5E2-9380E1FA938C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FluidApi/Data/DataLayer.cs">
+    <Files>
+      <File FileName="FluidApi/Controllers/AuthenticationController.cs" Line="19" Column="17" />
+      <File FileName="FluidApi/Data/DataLayer.cs" Line="375" Column="56" />
+      <File FileName="FluidApi/appsettings.json" Line="18" Column="144" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mtynas/FluidApi/FluidApi/Controllers/AccountController.cs" relfile="FluidApi/Controllers/AccountController.cs" line="26" column="1" />
+      <Breakpoint file="/Users/mtynas/FluidApi/FluidApi/Data/DataLayer.cs" relfile="FluidApi/Data/DataLayer.cs" line="603" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.FluidApi PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
